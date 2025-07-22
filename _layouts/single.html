@@ -17,10 +17,9 @@ layout: default
 <div id="main" role="main">
   {% assign url = page.url | default: "" %}
 
-  {% unless url contains '/publication'%}
+  {% unless url != "" and url contains '/publication' and url does not contain '/publications' %}
     {% include sidebar.html %}
   {% endunless %}
-
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
