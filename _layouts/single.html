@@ -17,7 +17,7 @@ layout: default
 <div id="main" role="main">
   {% assign url = page.url | default: "" %}
 
-  {% unless url != "" and url contains '/publication' and url does not contain '/publications' %}
+  {% unless url contains '/publication'%}
     {% include sidebar.html %}
   {% endunless %}
 
